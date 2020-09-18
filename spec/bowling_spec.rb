@@ -26,4 +26,8 @@ RSpec.describe 'Bowling' do
         expect(scorer(["X",1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2])).to eq(40)
     end
 
+    it 'contains one miss and the rest numbers' do
+        expect(scorer([9,"-",1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2])).to eq(36)
+    end
+
 end
