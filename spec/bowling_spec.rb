@@ -14,4 +14,16 @@ RSpec.describe 'Bowling' do
         expect(scorer([1,"/",1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2])).to eq(38)
     end
 
+    it 'contains numbers in all tries excluding two which are spares' do
+        expect(scorer([1,"/",1,2,1,2,1,2,1,"/",1,2,1,2,1,2,1,2,1,2])).to eq(46)
+    end
+
+    it 'contains spares in all tries except last frame' do
+        expect(scorer([1,"/",1,"/",1,"/",1,"/",1,"/",1,"/",1,"/",1,"/",1,"/",1,2])).to eq(102)
+    end
+
+    it 'contains one strike and the rest numbers' do
+        expect(scorer(["X",1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2])).to eq(40)
+    end
+
 end
