@@ -3,8 +3,10 @@ def scorer(scoreList)
     scoreList.each_with_index { |roll, index|
         if roll.is_a? Integer
             total += roll
-        else
+        elsif roll == "/"
             total = total - scoreList[index - 1] + 10 + scoreList[index + 1]
+        else
+            total = total + 10 + scoreList[index + 1] + scoreList[index + 2]
         end
     }
     total
